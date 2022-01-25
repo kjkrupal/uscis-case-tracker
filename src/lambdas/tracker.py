@@ -21,7 +21,7 @@ EMAIL_CONTENT = """
 ses_client = boto3.client("ses", region_name="us-east-1")
 
 
-def lambda_handler(event, context):
+def handler(event, context):
     url_prefix = "https://egov.uscis.gov/casestatus/mycasestatus.do?language=ENGLISH&caseStatusSearch=caseStatusPage&appReceiptNum="
 
     page = requests.get(url_prefix + CASE_NUMBER)
