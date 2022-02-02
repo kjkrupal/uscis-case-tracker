@@ -40,7 +40,6 @@ class UscisCaseTrackerStack(core.Stack):
         tracker_lambda.add_environment("CASE_NUMBER", configs["case_number"])
         tracker_lambda.add_environment("EMAIL", configs["email"])
 
-        events.Schedule.cron()
         tracker_rule = events.Rule(
             self,
             "uscis-case-tracker-rule",
